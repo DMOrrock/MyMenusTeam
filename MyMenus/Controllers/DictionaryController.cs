@@ -13,7 +13,7 @@ namespace MyMenus.Controllers
         // GET: Dictionary
         public ActionResult Index()
         {
-            ViewBag.dictionaryIndex = "Welcome to the Dicitionary page!";
+            ViewBag.dictionaryIndex = "Welcome to the Dictionary page!";
             return View();
         }
 
