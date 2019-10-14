@@ -31,10 +31,9 @@
         <a href="@Url.Action("Index", "Home")"
            class="w3-bar-item w3-button w3-hover-light-blue"><h6>Return to Main Menu</h6></a>
     </div>
-    @foreach(var entry in ViewBag.displayDictionary)
+    @foreach(KeyValuePair<int, string> entry in ViewBag.displayDictionary)
     {
-        <p class=" center">@entry.key: @entry.value</p>
-        <h6>went through loop</h6>
+        <p class=" center">@entry.Key: @entry.Value</p>
     }
 </body>
 </html>

@@ -8,7 +8,7 @@ namespace MyMenus.Controllers
 {
     public class DictionaryController : Controller
     {
-        Dictionary<string, int> myDictionary = new Dictionary<string, int>();
+        static Dictionary<int, string> myDictionary = new Dictionary<int, string>();
 
         // GET: Dictionary
         public ActionResult Index()
@@ -19,7 +19,7 @@ namespace MyMenus.Controllers
 
         public ActionResult AddOne()
         {
-            myDictionary.Add("New Entry " + (myDictionary.Count +1) , (myDictionary.Count + 1));
+            myDictionary.Add((myDictionary.Count + 1), "New Entry " + (myDictionary.Count + 1));
             ViewBag.dictionaryIndex = "One item added to dictionary";
 
             return View("Index");
@@ -29,7 +29,7 @@ namespace MyMenus.Controllers
             myDictionary.Clear();
             for (int i = 0; i < 2000; i++)
             {
-                myDictionary.Add("New Entry " + (myDictionary.Count + 1), (myDictionary.Count + 1));
+                myDictionary.Add((myDictionary.Count + 1), "New Entry " + (myDictionary.Count + 1));
             }
             ViewBag.dictionaryIndex = "Many items added to dictionary";
 
@@ -39,7 +39,7 @@ namespace MyMenus.Controllers
         public ActionResult Display()
         {
             ViewBag.displayDictionary = myDictionary;
-            return View();
+            return View("Display");
         }
 
         public ActionResult DeleteOneDictionary()
