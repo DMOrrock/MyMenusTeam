@@ -7,3 +7,8 @@
     margin-right: auto;
     width: 50%;
 }
+
+.bgi {
+    background-image: url('../Graphics/Data_Structures_Pic.jpg'); 
+    background-size: cover;
+}
