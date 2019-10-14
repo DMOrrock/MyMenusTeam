@@ -13,6 +13,7 @@ namespace MyMenus.Controllers
         // GET: Queue
         public ActionResult Index()
         {
+            ViewBag.queueIndex = "Welcome to the Queue page!";
             return View();
         }
 

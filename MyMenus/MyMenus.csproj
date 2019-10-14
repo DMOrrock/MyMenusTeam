@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DicitonaryController.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QueueController.cs" />
     <Compile Include="Controllers\StackController.cs" />
@@ -172,6 +172,10 @@
     <Content Include="Views\Queue\Display.cshtml" />
     <Content Include="Views\Queue\DeleteOneQueue.cshtml" />
     <Content Include="Views\Queue\SearchForItemQueue.cshtml" />
+    <Content Include="Views\Dictionary\Index.cshtml" />
+    <Content Include="Views\Dictionary\Display.cshtml" />
+    <Content Include="Views\Dictionary\DeleteOneDictionary.cshtml" />
+    <Content Include="Views\Dictionary\SearchForItemDictionary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,7 +186,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Dicitonary\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

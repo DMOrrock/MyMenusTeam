@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min (2).css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Display Dictionary</title>
+</head>
+<body>
+    <div class="w3-bar-block w3-light-grey w3-card-4">
+        <h3 class="w3-bar-item w3-blue">Menu</h3>
+        <a href="@Url.Action("AddOne", "Dictionary")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Add One Item to Dictionary</h6></a>
+        <a href="@Url.Action("AddMany", "Dictionary")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Add Huge List of Items to Dictionary</h6></a>
+        <a href="@Url.Action("Display", "Dictionary")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Display Dictionary</h6></a>
+        <a href="@Url.Action("DeleteOneDictionary", "Dictionary")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Delete From Dictionary</h6></a>
+        <a href="@Url.Action("Clear", "Dictionary")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Clear Dictionary</h6></a>
+        <a href="@Url.Action("SearchForItemDictionary", "Dictionary")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Search Dictionary</h6></a>
+        <a href="@Url.Action("Index", "Home")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Return to Main Menu</h6></a>
+    </div>
+    @foreach(var entry in ViewBag.displayDictionary)
+    {
+        <p class=" center">@entry.key: @entry.value</p>
+        <h6>went through loop</h6>
+    }
+</body>
+</html>
