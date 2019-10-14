@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min (2).css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>DeleteOneQueue</title>
+</head>
+<body>
+    <div class="w3-bar-block w3-light-grey w3-card-4">
+        <h3 class="w3-bar-item w3-blue">Menu</h3>
+        <a href="@Url.Action("AddOne", "Queue")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Add One Item to Queue</h6></a>
+        <a href="@Url.Action("AddMany", "Queue")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Add Huge List of Items to Queue</h6></a>
+        <a href="@Url.Action("Display", "Queue")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Display Queue</h6></a>
+        <a href="@Url.Action("DeleteOneQueue", "Queue")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Delete From Queue</h6></a>
+        <a href="@Url.Action("Clear", "Queue")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Clear Queue</h6></a>
+        <a href="@Url.Action("SearchForItemQueue", "Queue")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Search Queue</h6></a>
+        <a href="@Url.Action("Index", "Home")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Return to Main Menu</h6></a>
+    </div>
+    <div>
+        <form action="SearchItemQueue" method="post">
+            <table class="center">
+                <tr>
+                    <td>Enter:
+                    <td><input type="text" name="place" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit Form" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min (2).css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Display</title>
+</head>
+<body>
+    <div class="w3-bar-block w3-light-grey w3-card-4">
+        <h3 class="w3-bar-item w3-blue">Menu</h3>
+        <a href="@Url.Action("AddOne", "Stack")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Add One Item to Stack</h6></a>
+        <a href="@Url.Action("AddMany", "Stack")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Add Huge List of Items to Stack</h6></a>
+        <a href="@Url.Action("Display", "Stack")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Display Stack</h6></a>
+        <a href="@Url.Action("DeleteOne", "Stack")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Delete From Stack</h6></a>
+        <a href="@Url.Action("Clear", "Stack")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Clear Stack</h6></a>
+        <a href="@Url.Action("SearchForItem", "Stack")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Search Stack</h6></a>
+        <a href="@Url.Action("Index", "Home")"
+           class="w3-bar-item w3-button w3-hover-light-blue"><h6>Return to Main Menu</h6></a>
+    </div>
+    @foreach (var sData in ViewBag.StackBag)
+    {
+        <p class="center">@sData</p>
+    }
+</body>
+</html>
