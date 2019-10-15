@@ -44,12 +44,32 @@ namespace MyMenus.Controllers
 
         public ActionResult DeleteOneDictionary()
         {
-            return View();
+            return View("DeleteOneDictionary");
         }
 
         public ActionResult DeleteItemDictionary(string place)
         {
-            ViewBag.dictionaryIndex = "Entered Delete";
+            try
+            {
+                int tryKey = Int32.Parse(place);
+                if (myDictionary.Count == 0)
+                {
+                    ViewBag.dictionaryIndex = "The dictionary is Empty, Add items before trying to delete them";
+                }
+                if (myDictionary.ContainsKey(tryKey))
+                {
+                    myDictionary.Remove(tryKey);
+                    ViewBag.dictionaryIndex = "The value was found and deleted";
+                }
+                else
+                {
+                    ViewBag.dictionaryIndex = "This value does not exist in the Dictionary";
+                }
+            }
+            catch (FormatException)
+            {
+                ViewBag.dictionaryIndex = "Not a valid number";
+            }
             return View("Index");
         }
 
@@ -68,7 +88,29 @@ namespace MyMenus.Controllers
 
         public ActionResult SearchItemDictionary(string place)
         {
-            ViewBag.dictionaryIndex = "Entered Search ";
+            try
+            {
+                int tryKey = Int32.Parse(place);
+                System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+                sw.Start();
+                if (myDictionary.ContainsKey(tryKey))
+                {
+                    string value = myDictionary[tryKey];
+                    sw.Stop();
+                    TimeSpan ts = sw.Elapsed;
+                    ViewBag.dictionaryIndex = "Item found | with the Value of: " + value + " | Time elapsed: " + ts;
+
+                }
+                else
+                {
+                    ViewBag.dictionaryIndex = "Item not found in Dictionary";
+                }
+
+            }
+            catch (FormatException)
+            {
+                ViewBag.dictionaryIndex = "Not a valid number";
+            }
             return View("Index");
         }
     }
